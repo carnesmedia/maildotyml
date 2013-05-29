@@ -1,29 +1,42 @@
 require 'test_helper'
 require 'ostruct'
+require 'action_mailer'
 
 describe Maildotyml do
+  def settings
+    { domain: 'localhost.localdomain', address: 'localhost', port: 25 }
+  end
+
+  def actionmailer
+    ActionMailer::Base
+  end
+
+  def delivery_method
+    :smtp
+  end
+
+  def configuration
+    @_configuration ||= begin
+      configuration = MiniTest::FireMock.new('Maildotyml::Configuration')
+      configuration.expect(:present?, true)
+      configuration.expect(:delivery_method, delivery_method)
+      configuration.expect(:settings, settings)
+
+      configuration
+    end
+  end
+
+  describe 'when the adapter does not exist' do
+    def delivery_method
+      :bogus
+    end
+
+    it 'raises an error' do
+      ->{ Maildotyml.configure(configuration, actionmailer) }.must_raise(ArgumentError)
+    end
+  end
 
   describe 'with basic configuration' do
-    def settings
-      { domain: 'localhost.localdomain', address: 'localhost', port: 25 }
-    end
-
-    def actionmailer
-      @_actionmailer ||= OpenStruct.new
-    end
-
-    def configuration
-      @_configuration ||= begin
-        configuration = MiniTest::FireMock.new('Maildotyml::Configuration')
-        configuration.expect(:present?, true)
-        configuration.expect(:delivery_method, :smtp)
-        configuration.expect(:delivery_method, :smtp)
-        configuration.expect(:settings, settings)
-
-        configuration
-      end
-    end
-
     before do
       Maildotyml.configure(configuration, actionmailer)
     end

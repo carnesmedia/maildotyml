@@ -11,7 +11,7 @@ module Maildotyml
     end
 
     def delivery_method
-      parsed[:adapter]
+      parsed[:adapter].to_sym if parsed[:adapter]
     end
 
     def settings

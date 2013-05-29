@@ -5,4 +5,4 @@ production:
   port: 25
 
 test:
-  adapter: :test
+  adapter: test

@@ -13,7 +13,6 @@ describe Maildotyml::Configuration do
     'production'
   end
 
-
   describe 'basic production' do
     it 'parses delivery method' do
       configuration.delivery_method.must_equal :smtp
@@ -38,7 +37,7 @@ describe Maildotyml::Configuration do
       configuration.must_be :present?
     end
 
-    it 'parses delivery method' do
+    it 'parses delivery method as a symbol' do
       configuration.delivery_method.must_equal :test
     end
 
