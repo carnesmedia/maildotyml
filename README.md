@@ -35,22 +35,34 @@ test:
 
 production:
   adapter: :smtp
-  address: 'your.smtp.server'
+  # Note that some standard activerecord options are automatically translated.
+  host: 'your.smtp.server'
   port: 25
   authentication: 'login'
   domain: 'your.domain-to.authenticate-to.smtp.com'
-  user_name: <%= ENV['MAIL_USERNAME'] %>
+  username: <%= ENV['MAIL_USERNAME'] %>
   password: <%= ENV['MAIL_PASSWORD'] %>
   enable_startttls_auto: true
 ```
+
+### ActiveRecord style keys
+
+In order to be more like ActiveRecord configuration, maildotyml automatically
+maps some configuration keys. For example, ActiveRecord expects a `username` for
+database connection. ActionMailer expects `user_name` for smtp configuration.
+
+With maildotyml, either will work.
+
+#### Supported mappings
+
+* `username` -> `user_name`
+* `host` -> `address`
 
 ## TODO
 
 The following features are planned for the near future:
 
 * Add a generator to create `config/mail.yml.example` with example configuration.
-* Map common ActiveRecord configuration keys.
-  (ie, `username` -> `user_name`).
 
 ## Contributing
 

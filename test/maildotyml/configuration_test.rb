@@ -25,7 +25,6 @@ describe Maildotyml::Configuration do
         port: 25,
       })
     end
-
   end
 
   describe 'basic test' do
@@ -98,6 +97,22 @@ describe Maildotyml::Configuration do
 
     it 'parses settings as an empty hash' do
       configuration.settings.must_equal({})
+    end
+  end
+
+  describe 'activerecord style keys' do
+    def fixture_name
+      'activerecord_keys'
+    end
+
+    it 'maps activerecord style keys to actionmailer style' do
+      configuration.settings.must_equal({
+        address: 'example.com',
+        port: 25,
+        user_name: 'tom_waits',
+        password: 'swordfishtrombones',
+        enable_startttls_auto: true,
+      })
     end
   end
 end

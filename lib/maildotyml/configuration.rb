@@ -15,7 +15,7 @@ module Maildotyml
     end
 
     def settings
-      parsed.reject { |k,v| k == :adapter }
+      map_activerecord_style_keys(parsed.reject { |k,v| k == :adapter })
     end
 
     def present?
@@ -37,5 +37,16 @@ module Maildotyml
       end
     end
 
+    def map_activerecord_style_keys(settings)
+      settings = settings.dup
+      replace_hash_key(settings, :username, :user_name)
+      replace_hash_key(settings, :host, :address)
+
+      settings
+    end
+
+    def replace_hash_key(hash, before, after)
+      hash[after] = hash.delete(before) if hash[before]
+    end
   end
 end

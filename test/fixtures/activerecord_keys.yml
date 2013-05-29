@@ -1,0 +1,15 @@
+production:
+  adapter: :smtp
+  host: 'example.com'
+  port: 25
+  username: tom_waits
+  password: swordfishtrombones
+  enable_startttls_auto: true
+
+development:
+  adapter: :smtp
+  address: 'example.com'
+  port: 25
+  user_name: tom_waits
+  password: swordfishtrombones
+  enable_startttls_auto: true
