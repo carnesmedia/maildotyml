@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.0.3
+
+* Map ActiveRecord style configuration keys
+
 ## Version 0.0.2
 
 * Handle missing mail.yml and missing envorinment
