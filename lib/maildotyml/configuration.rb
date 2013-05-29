@@ -1,6 +1,7 @@
 require 'yaml'
 require 'erb'
 require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/object/blank'
 
 module Maildotyml
   class Configuration
@@ -17,15 +18,23 @@ module Maildotyml
       parsed.reject { |k,v| k == :adapter }
     end
 
+    def present?
+      parsed.present?
+    end
+
     private
 
     def parsed
       # TODO: What to do if there is no environment
-      @_parsed ||= yaml.fetch(environment).symbolize_keys
+      @_parsed ||= yaml.fetch(environment, {}).symbolize_keys
     end
 
     def yaml
-      YAML.load ERB.new(file.read).result
+      if file.exist?
+        YAML.load ERB.new(file.read).result
+      else
+        {}
+      end
     end
 
   end

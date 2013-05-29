@@ -45,7 +45,7 @@ production:
 The following features are planned for the near future:
 
 * Add a generator to create `config/mail.yml.example` with example configuration.
-* Better error handling (if `mail.yml` doesn't exist, or environment is not present).
+* Raise an exception if the configured delivery method does not exist
 * Map common ActiveRecord configuration keys.
   (ie, `username` -> `user_name`).
 
