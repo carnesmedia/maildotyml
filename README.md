@@ -2,6 +2,9 @@
 
 Configure ActionMailer with mail.yml, like ActiveRecord and database.yml.
 
+[![Build Status](https://travis-ci.org/carnesmedia/maildotyml.png)](https://travis-ci.org/carnesmedia/maildotyml)
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
