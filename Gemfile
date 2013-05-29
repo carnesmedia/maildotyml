@@ -5,3 +5,4 @@ gemspec
 
 gem 'minitest', require: false
 gem 'minitest-firemock', require: false
+gem 'coveralls', require: false

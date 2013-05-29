@@ -3,6 +3,7 @@
 Configure ActionMailer with mail.yml, like ActiveRecord and database.yml.
 
 [![Build Status](https://travis-ci.org/carnesmedia/maildotyml.png)](https://travis-ci.org/carnesmedia/maildotyml)
+[![Coverage Status](https://coveralls.io/repos/carnesmedia/maildotyml/badge.png)](https://coveralls.io/r/carnesmedia/maildotyml)
 
 
 ## Installation

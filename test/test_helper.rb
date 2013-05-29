@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'maildotyml'
 require 'minitest/autorun'
 require 'minitest/spec'
