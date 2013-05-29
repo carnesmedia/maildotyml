@@ -1,0 +1,8 @@
+production:
+  adapter: :smtp
+  domain: localhost.localdomain
+  address: localhost
+  port: 25
+
+test:
+  adapter: :test

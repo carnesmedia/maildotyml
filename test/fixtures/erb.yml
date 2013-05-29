@@ -1,0 +1,12 @@
+development:
+  adapter: :smtp
+  domain: localhost.localdomain
+  address: localhost
+  port: 25
+
+production:
+  adapter: :smtp
+  user_name: <%= ENV['TEST_ENV_USER_NAME'] %>
+  password: <%= ENV['TEST_ENV_PASSWORD'] %>
+  port: <%= 5 * 5 %>
+
