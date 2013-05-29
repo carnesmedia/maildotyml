@@ -7,15 +7,16 @@ Gem::Specification.new do |spec|
   spec.name          = "maildotyml"
   spec.version       = Maildotyml::VERSION
   spec.authors       = ["Amiel Martin"]
-  spec.email         = ["amiel.martin@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.email         = ["amiel@carnesmedia.com"]
+  spec.description   = %q{Add mail.yml to rails}
+  spec.summary       = %q{
+    Configure ActionMailer with mail.yml, like ActiveRecord and database.yml.
+  }
+  spec.homepage      = "https://github.com/carnesmedia/maildotyml"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files`.split($/)
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.files         = Dir["{lib}/**/*"] + ["LICENSE.txt", "Rakefile", "README.md"]
+  # spec.test_files    = Dir["test/**/*"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.3"

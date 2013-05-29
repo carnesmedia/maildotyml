@@ -1,6 +1,6 @@
 # Maildotyml
 
-TODO: Write a gem description
+Configure ActionMailer with mail.yml, like ActiveRecord and database.yml.
 
 ## Installation
 
