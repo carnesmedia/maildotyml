@@ -12,13 +12,42 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install maildotyml
-
 ## Usage
 
-TODO: Write usage instructions here
+Add a `config/mail.yml` to your project.
+
+Here is an example to get you started:
+
+```yaml
+development:
+  adapter: :smtp
+  address: 'localhost'
+  port: 25
+  domain: 'localhost.localdomain'
+  enable_startttls_auto: true
+
+test:
+  adapter: :test
+
+production:
+  adapter: :smtp
+  address: 'your.smtp.server'
+  port: 25
+  authentication: 'login'
+  domain: 'your.domain-to.authenticate-to.smtp.com'
+  user_name: <%= ENV['MAIL_USERNAME'] %>
+  password: <%= ENV['MAIL_PASSWORD'] %>
+  enable_startttls_auto: true
+```
+
+## TODO
+
+The following features are planned for the near future:
+
+* Add a generator to create `config/mail.yml.example` with example configuration.
+* Better error handling (if `mail.yml` doesn't exist, or environment is not present).
+* Map common ActiveRecord configuration keys.
+  (ie, `username` -> `user_name`).
 
 ## Contributing
 
