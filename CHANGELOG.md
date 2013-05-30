@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.0.4
+
+* Add a generator that installs an example config/mail.yml.example.
+
 ## Version 0.0.3
 
 * Map ActiveRecord style configuration keys
