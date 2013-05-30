@@ -16,6 +16,10 @@ And then execute:
 
     $ bundle
 
+To install an example mail.yml, run:
+
+    $ rails generate maildotyml:install
+
 ## Usage
 
 Add a `config/mail.yml` to your project.
@@ -57,12 +61,6 @@ With maildotyml, either will work.
 
 * `username` -> `user_name`
 * `host` -> `address`
-
-## TODO
-
-The following features are planned for the near future:
-
-* Add a generator to create `config/mail.yml.example` with example configuration.
 
 ## Contributing
 

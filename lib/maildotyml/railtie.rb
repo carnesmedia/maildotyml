@@ -1,3 +1,5 @@
+require 'maildotyml/generators/install_generator'
+
 module Maildotyml
   class Railtie < ::Rails::Railtie
     initializer 'maildotyml.initialize' do |app|

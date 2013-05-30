@@ -1,0 +1,15 @@
+development:
+  adapter: :smtp
+
+test:
+  adapter: :test
+
+production:
+  adapter: :smtp
+  host: 'localhost'
+  port: 25
+  authentication: 'login'
+  domain: 'localhost.localdomain'
+  username: <%= ENV['MAIL_USERNAME'] %>
+  password: <%= ENV['MAIL_PASSWORD'] %>
+  enable_startttls_auto: true
