@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require 'rails/generators/base'
+require 'rails/generators'
 
 module Maildotyml
   class InstallGenerator < Rails::Generators::Base
