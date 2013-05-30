@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.0.6
+
+* Fix a bug affecting rails startup
+
 ## Version 0.0.5
 
 * Fix bug in generator where erb tags intended to be in the template were
